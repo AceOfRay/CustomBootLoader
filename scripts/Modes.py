@@ -30,15 +30,6 @@ class ResearchMode(Mode):
             subprocess.run(["code", "C:\\Users\\rayra\\CalPoly\\TestingAnalysisSURP\\MutationCLI"], shell=True)
 
 class NoteTakingMode(Mode):
-
-    def __init__(self):
-        self.device_name = platform.node()
-
     def run(self):
-        
-        if self.device_name == "Ashe":
-            subprocess.run(["start", "C:\\Program Files\\Microsoft Office\\root\\Office16\\ONENOTE.EXE"], shell=True)
-        elif self.device_name == "Evette":
-            # to change
-            subprocess.run(["start", "C:\\Program Files\\Microsoft Office\\root\\Office16\\ONENOTE.EXE"], shell=True)
+        subprocess.run(["start", 'onenote'], shell=True)
 

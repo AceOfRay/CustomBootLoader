@@ -17,7 +17,7 @@ class BootLoader:
 
         # set the title and size of the window
         self.root.title("Select Focus Mode")
-        self.root.geometry("920x480")
+        self.root.geometry("620x280")
 
         # set the theme
         self.root.tk.call("source", "C:\\Users\\rayra\\Projects\\CustomBootManager\\azure.tcl")
@@ -25,10 +25,11 @@ class BootLoader:
 
     def initialize_content(self):
         label = ttk.Label(self.root, text="Select Focus Mode", font=("Arial", 16))
-        label.pack()
+        label.pack(pady=50)
 
         button_frame = ttk.Frame(self.root)
-        button_frame.pack()
+        button_frame.pack(pady=50)
+
 
         buttons = [
             ttk.Button(button_frame, text="Research Mode", style='Accent.TButton', command=lambda : self.start_mode("research")),
@@ -37,7 +38,7 @@ class BootLoader:
         ]
 
         for button in buttons:
-            button.pack(side=tk.LEFT, padx=5)
+            button.pack(side=tk.LEFT, padx=30)
 
 
     def start_mode(self, mode : str):
