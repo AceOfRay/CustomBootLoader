@@ -17,7 +17,7 @@ class BootLoader:
 
         # set the title and size of the window
         self.root.title("Select Focus Mode")
-        self.root.geometry("620x280")
+        self.root.geometry("820x280")
 
         # set the theme
         self.root.tk.call("source", "C:\\Users\\rayra\\Projects\\CustomBootManager\\azure.tcl")
@@ -32,9 +32,12 @@ class BootLoader:
 
 
         buttons = [
-            ttk.Button(button_frame, text="Research Mode", style='Accent.TButton', command=lambda : self.start_mode("research")),
-            ttk.Button(button_frame, text="Chi-Epsilon Work Mode", style='Accent.TButton', command= lambda : self.start_mode("chi_epsilon")),
-            ttk.Button(button_frame, text="Note-Taking Mode", style='Accent.TButton', command= lambda : self.start_mode("note_taking")),
+            ttk.Button(button_frame, text="Virtual Home Development", style='Accent.TButton', command=lambda : self.start_mode("virtual_home")),
+            ttk.Button(button_frame, text="Chi-Epsilon Work", style='Accent.TButton', command= lambda : self.start_mode("chi_epsilon")),
+            ttk.Button(button_frame, text="Note-Taking", style='Accent.TButton', command= lambda : self.start_mode("note_taking")),
+            ttk.Button(button_frame, text="Ultimate Guitar", style='Accent.TButton', command= lambda : self.start_mode("guitar")),
+            #ttk.Button(button_frame, text="Research", style='Accent.TButton', command= lambda : self.start_mode("research")),
+
         ]
 
         for button in buttons:
@@ -45,12 +48,16 @@ class BootLoader:
         try:
             m : Modes.Mode = None
             match mode:
+                case "virtual_home":
+                    m = Modes.VirtualHome()
                 case "research":
                     m = Modes.ResearchMode()
                 case "chi_epsilon":
                     m = Modes.ChiEpsilonMode()
                 case "note_taking":
                     m = Modes.NoteTakingMode()
+                case "guitar":
+                    m = Modes.GuitarMode()
 
             m.run()
         except Exception as e:

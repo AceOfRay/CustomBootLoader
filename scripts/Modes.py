@@ -29,7 +29,18 @@ class ResearchMode(Mode):
             # to change
             subprocess.run(["code", "C:\\Users\\rayra\\CalPoly\\TestingAnalysisSURP\\MutationCLI"], shell=True)
 
+class VirtualHome(Mode):
+
+    def run(self):
+        web.open("https://drive.google.com/drive/folders/1yktp647vdjY6R0kLxWiEXte0YzHSkFGY")     
+        web.open("https://nextjs.org/docs")    
+        subprocess.run(["code", "C:\\Users\\rayra\\Projects\\virtualhome"], shell=True)
+
+
 class NoteTakingMode(Mode):
     def run(self):
         subprocess.run(["start", 'onenote'], shell=True)
 
+class GuitarMode(Mode):
+    def run(self):
+        web.open("https://www.ultimate-guitar.com/")
